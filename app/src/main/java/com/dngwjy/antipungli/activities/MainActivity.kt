@@ -21,14 +21,12 @@ class MainActivity : AppCompatActivity(), MainActView {
 
 	//.late init Declaration
 	lateinit var presenter:MainActPrensenter
-
 	// val initialization
 	val apiRequest=ApiRequest()
 	val gsonResponse=Gson()
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
-
 		//.presenter initialization
 		presenter= MainActPrensenter(this,apiRequest,gsonResponse)
 	}
