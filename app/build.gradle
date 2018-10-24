@@ -22,6 +22,9 @@ android {
     }
 
 }
+androidExtensions {
+    experimental = true
+}
 repositories {
     maven { url = 'https://dl.bintray.com/yuancloud/maven/' }
 }

@@ -2,8 +2,10 @@ package com.dngwjy.antipungli.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.dngwjy.antipungli.R
 import com.dngwjy.antipungli.api_repository.ApiRequest
+import com.dngwjy.antipungli.data.models.LoginData
 import com.dngwjy.antipungli.presenters.MainActPrensenter
 import com.dngwjy.antipungli.views.MainActView
 import com.google.gson.Gson
@@ -29,5 +31,8 @@ class MainActivity : AppCompatActivity(), MainActView {
 		setContentView(R.layout.activity_main)
 		//.presenter initialization
 		presenter= MainActPrensenter(this,apiRequest,gsonResponse)
+
+		val data=intent.extras.get("data") as LoginData
+		Toast.makeText(this,"Wellcome ${data.username}",Toast.LENGTH_SHORT).show()
 	}
 }
